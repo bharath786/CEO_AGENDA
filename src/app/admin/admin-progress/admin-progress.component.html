@@ -1,278 +1,282 @@
 <div class="content-wrapper clearfix">
-  <div class="page-bar">
-    <ul class="page-breadcrumb">
-      <li>
-        <i class="fa fa-home"></i>
-        <a routerLink="/admin">Home</a>
-        <i class="fa fa-angle-right"></i>
-      </li>
-      <li>
-        <a routerLink="/admin/progress">Progress</a>
-      </li>
-    </ul>
-
-  </div>
-
-  <div class="col-sm-12" >
-    <ul class="nav nav-pills" style="margin-left: 15px;">
-      <li class="active pill_bg_color">
-        <a href="#summary" data-toggle="tab"><i class="fa fa-list-alt"></i>&nbsp;Summary</a>
-      </li>
-      <li class="pill_bg_color">
-        <a href="#data" data-toggle="tab"><i class="fa fa-folder"></i>&nbsp;Data</a>
-      </li>
-    </ul>
-  </div>
-  <div class="tab-content">
-    <div id="summary" class="col-sm-12 margintop20 tab-pane active">
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="dashboard-stat blue-madison">
-          <div class="visual">
-            <i class="fa fa-comments"></i>
-          </div>
-          <div class="details">
-            <div class="number">
-              9
-            </div>
-            <div class="desc">
-              Exceptions
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="dashboard-stat red-intense">
-          <div class="visual">
-            <i class="fa fa-bar-chart-o"></i>
-          </div>
-          <div class="details">
-            <div class="number">
-              2/5
-            </div>
-            <div class="desc">
-              KRA
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="dashboard-stat green-haze">
-          <div class="visual">
-            <i class="fa fa-shopping-cart"></i>
-          </div>
-          <div class="details">
-            <div class="number">
-              4/5
-            </div>
-            <div class="desc">
-              KPI
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="dashboard-stat purple-plum">
-          <div class="visual">
-            <i class="fa fa-globe"></i>
-          </div>
-          <div class="details">
-            <div class="number">
-              SCOPE
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container col-xs-12 filter">
-    
-        <div class="col-md-4 col-sm-6 col-sx-12 cust-padding">
-          <select class="form-control" name="Location">
-            <option value="">Location</option>
-            <option value="">Chennai</option>
-            <option value="">Delhi</option>
-            <option value="">Hyderabad</option>
-            <option value="">Kolkata</option>
-            <option value="">Mumbai</option>
-          </select>
-        </div>
-        <div class="col-md-4 col-sm-6 col-sx-12 cust-padding">
-          <select class="form-control" name="Division">
-            <option value="">Division</option>
-            <option value="">Division1</option>
-            <option value="">Division2</option>
-            <option value="">Division3</option>
-            <option value="">Division4</option>
-            <option value="">Division5</option>
-          </select>
-        </div>
-
-      
-        <div class="col-md-4 col-sm-6 col-xs-12 cust-padding">
+    <div class="page-bar">
+      <ul class="page-breadcrumb">
+        <li>
+          <i class="fa fa-home"></i>
+          <a routerLink="/admin">Home</a>
+          <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+          <a routerLink="/admin/progress">Progress</a>
+        </li>
+      </ul>
   
-          
-                
-            <a type="button" class="btn btn-default grey-dark daterange" ><i class="glyphicon glyphicon-calendar"></i> {{ start_date | date:'M/dd/y' }} - {{ end_date| date:'M/dd/y' }}</a>
-      
-        </div> 
-        
     </div>
+  
+    <div class="col-sm-12" >
+      <ul class="nav nav-pills">
+        <li class="active pill_bg_color">
+          <a href="#summary" data-toggle="tab"><i class="fa fa-list-alt"></i>&nbsp;Summary</a>
+        </li>
+        <li class="pill_bg_color">
+          <a href="#data" data-toggle="tab"><i class="fa fa-folder"></i>&nbsp;Data</a>
+        </li>
+      </ul>
     </div>
-
-    <div id="data" class="tab-pane">
-      <div class="row margin-right-10 ">
-        <div class="pull-right">
-          <a class="btn btn-primary" id="Quality_Upload" title="Click to Upload Document">
-            <i class="fa fa-upload"></i>&nbsp;&nbsp;Upload
-          </a>
-          <a class="btn btn-success" id="Quality_download" title="Click to Download Document">
-            <i class="fa fa-download"></i>&nbsp;&nbsp;Download
-          </a>
+    <div class="tab-content">
+      <div id="summary" class="col-sm-12 margintop20 tab-pane active">
+        <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="dashboard-stat blue-madison">
+            <div class="visual">
+              <i class="fa fa-comments"></i>
+            </div>
+            <div class="details">
+              <div class="number">
+                9
+              </div>
+              <div class="desc">
+                Exceptions
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-sm-12" style="margin-left:30px">
-          <ul class="nav nav-pills  ">
-            <li class="pill_bg_color active">
-              <a href="#tab_Quality_inner_1" data-toggle="tab" aria-expanded="true"><i class="fa fa-circle-o success"></i>&nbsp;&nbsp;Active</a>
-            </li>
-            <li class="pill_bg_color">
-              <a href="#tab_Quality_inner_2" data-toggle="tab" aria-expanded="true"><i class="fa fa-archive"></i>&nbsp;&nbsp;Archive</a>
-            </li>
-          </ul>
-          <div class="tab-content">
-            <div class="tab-pane active" id="tab_Quality_inner_1">
-              <div class="col-sm-12 col-xs-12 margintop20">
-                <div class="row">
-                  <div id="Quality_table1_wrapper" class="dataTables_wrapper no-footer">
-                    <div class="row">
-                      <div class="col-md-6 col-sm-12">
-                        <div class="dataTables_length" id="Quality_table1_length"><label> <select name="Quality_table1_length"
-                              aria-controls="Quality_table1" class="form-control input-xsmall input-inline">
-                              <option value="10">10</option>
-                              <option value="25">25</option>
-                              <option value="50">50</option>
-                              <option value="100">100</option>
-                            </select> records </label></div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="dashboard-stat red-intense">
+            <div class="visual">
+              <i class="fa fa-bar-chart-o"></i>
+            </div>
+            <div class="details">
+              <div class="number">
+                2/5
+              </div>
+              <div class="desc">
+                KRA
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="dashboard-stat green-haze">
+            <div class="visual">
+              <i class="fa fa-shopping-cart"></i>
+            </div>
+            <div class="details">
+              <div class="number">
+                4/5
+              </div>
+              <div class="desc">
+                KPI
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="dashboard-stat purple-plum">
+            <div class="visual">
+              <i class="fa fa-globe"></i>
+            </div>
+            <div class="details">
+              <div class="number">
+                SCOPE
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        </div>
+        <div class="container col-xs-12 filter">
+      
+          <div class="col-md-4 col-sm-6 col-sx-12 cust-padding">
+            <select class="form-control" name="Location">
+              <option value="">Location</option>
+              <option value="">Chennai</option>
+              <option value="">Delhi</option>
+              <option value="">Hyderabad</option>
+              <option value="">Kolkata</option>
+              <option value="">Mumbai</option>
+            </select>
+          </div>
+          <div class="col-md-4 col-sm-6 col-sx-12 cust-padding">
+            <select class="form-control" name="Division">
+              <option value="">Division</option>
+              <option value="">Division1</option>
+              <option value="">Division2</option>
+              <option value="">Division3</option>
+              <option value="">Division4</option>
+              <option value="">Division5</option>
+            </select>
+          </div>
+  
+        
+          <div class="col-md-4 col-sm-6 col-xs-12 cust-padding">
+    
+            
+                  
+              <a type="button" class="btn btn-default grey-dark daterange" ><i class="glyphicon glyphicon-calendar"></i> {{ start_date | date:'M/dd/y' }} - {{ end_date| date:'M/dd/y' }}</a>
+        
+          </div> 
+          
+      </div>
+      </div>
+  
+      <div id="data" class="tab-pane">
+        <div class="row margin-right-10 ">
+          <div class="pull-right">
+            <a class="btn btn-primary" id="Quality_Upload" title="Click to Upload Document">
+              <i class="fa fa-upload"></i>&nbsp;&nbsp;Upload
+            </a>
+            <a class="btn btn-success" id="Quality_download" title="Click to Download Document">
+              <i class="fa fa-download"></i>&nbsp;&nbsp;Download
+            </a>
+          </div>
+          <div class="col-sm-12" style="margin-left:30px">
+            <ul class="nav nav-pills  ">
+              <li class="pill_bg_color active">
+                <a href="#tab_Quality_inner_1" data-toggle="tab" aria-expanded="true"><i class="fa fa-circle-o success"></i>&nbsp;&nbsp;Active</a>
+              </li>
+              <li class="pill_bg_color">
+                <a href="#tab_Quality_inner_2" data-toggle="tab" aria-expanded="true"><i class="fa fa-archive"></i>&nbsp;&nbsp;Archive</a>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="tab_Quality_inner_1">
+                <div class="col-sm-12 col-xs-12 margintop20">
+                  <div class="row">
+                    <div id="Quality_table1_wrapper" class="dataTables_wrapper no-footer">
+                      <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                          <div class="dataTables_length" id="Quality_table1_length"><label> <select name="Quality_table1_length"
+                                aria-controls="Quality_table1" class="form-control input-xsmall input-inline">
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                              </select> records </label></div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                          <div id="Quality_table1_filter" class="dataTables_filter"><label>Search:<input type="search"
+                                class="form-control input-small input-inline" placeholder="" aria-controls="Quality_table1"></label></div>
+                        </div>
                       </div>
-                      <div class="col-md-6 col-sm-12">
-                        <div id="Quality_table1_filter" class="dataTables_filter"><label>Search:<input type="search"
-                              class="form-control input-small input-inline" placeholder="" aria-controls="Quality_table1"></label></div>
+                      <div class="table-scrollable">
+                        <table class="table table-responsive table-bordered dataTable no-footer" id="Quality_table1" role="grid"
+                          aria-describedby="Quality_table1_info">
+                          <thead>
+                            <tr role="row">
+                              <th class="sorting_asc" tabindex="0" aria-controls="Quality_table1" rowspan="1" colspan="1"
+                                aria-sort="ascending" aria-label="Upload ID: activate to sort column ascending" style="width: 0px;">Upload
+                                ID</th>
+                              <th class="sorting" tabindex="0" aria-controls="Quality_table1" rowspan="1" colspan="1"
+                                aria-label="Division: activate to sort column ascending" style="width: 0px;">Division</th>
+                              <th class="sorting" tabindex="0" aria-controls="Quality_table1" rowspan="1" colspan="1"
+                                aria-label="Location: activate to sort column ascending" style="width: 0px;">Location</th>
+                              <th class="sorting" tabindex="0" aria-controls="Quality_table1" rowspan="1" colspan="1"
+                                aria-label="Department: activate to sort column ascending" style="width: 0px;">Department</th>
+                              <th class="sorting" tabindex="0" aria-controls="Quality_table1" rowspan="1" colspan="1"
+                                aria-label="Date Uploaded: activate to sort column ascending" style="width: 0px;">Date
+                                Uploaded</th>
+                              <th class="text-center sorting" tabindex="0" aria-controls="Quality_table1" rowspan="1"
+                                colspan="1" aria-label="Action: activate to sort column ascending" style="width: 0px;">Action</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+  
+                            <tr role="row" class="odd">
+                              <td class="sorting_1">123456</td>
+                              <td>Division1</td>
+                              <td>Hyderabad</td>
+                              <td>Developer</td>
+                              <td> 29/06/2018</td>
+                              <td class="text-center "><a class="padding_right "><i class="fa fa-pencil-square" title="Click to edit"></i></a>
+                                <a><i class="fa fa-trash red" title="Click to delete"></i></a></td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
-                    </div>
-                    <div class="table-scrollable">
-                      <table class="table table-responsive table-bordered dataTable no-footer" id="Quality_table1" role="grid"
-                        aria-describedby="Quality_table1_info">
-                        <thead>
-                          <tr role="row">
-                            <th class="sorting_asc" tabindex="0" aria-controls="Quality_table1" rowspan="1" colspan="1"
-                              aria-sort="ascending" aria-label="Upload ID: activate to sort column ascending" style="width: 0px;">Upload
-                              ID</th>
-                            <th class="sorting" tabindex="0" aria-controls="Quality_table1" rowspan="1" colspan="1"
-                              aria-label="Division: activate to sort column ascending" style="width: 0px;">Division</th>
-                            <th class="sorting" tabindex="0" aria-controls="Quality_table1" rowspan="1" colspan="1"
-                              aria-label="Location: activate to sort column ascending" style="width: 0px;">Location</th>
-                            <th class="sorting" tabindex="0" aria-controls="Quality_table1" rowspan="1" colspan="1"
-                              aria-label="Department: activate to sort column ascending" style="width: 0px;">Department</th>
-                            <th class="sorting" tabindex="0" aria-controls="Quality_table1" rowspan="1" colspan="1"
-                              aria-label="Date Uploaded: activate to sort column ascending" style="width: 0px;">Date
-                              Uploaded</th>
-                            <th class="text-center sorting" tabindex="0" aria-controls="Quality_table1" rowspan="1"
-                              colspan="1" aria-label="Action: activate to sort column ascending" style="width: 0px;">Action</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-
-                          <tr role="row" class="odd">
-                            <td class="sorting_1">123456</td>
-                            <td>Division1</td>
-                            <td>Hyderabad</td>
-                            <td>Developer</td>
-                            <td> 29/06/2018</td>
-                            <td class="text-center "><a class="padding_right "><i class="fa fa-pencil-square" title="Click to edit"></i></a>
-                              <a><i class="fa fa-trash red" title="Click to delete"></i></a></td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <div class="row">
-                      
-                      <div class="col-md-7 col-sm-12">
-                        <div class="dataTables_paginate paging_simple_numbers" id="Quality_table1_paginate">
-                          <ul class="pagination">
-                            <li class="paginate_button previous disabled" aria-controls="Quality_table1" tabindex="0"
-                              id="Quality_table1_previous"><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                            <li class="paginate_button active" aria-controls="Quality_table1" tabindex="0"><a href="#">1</a></li>
-                            <li class="paginate_button next disabled" aria-controls="Quality_table1" tabindex="0" id="Quality_table1_next"><a
-                                href="#"><i class="fa fa-angle-right"></i></a></li>
-                          </ul>
+                      <div class="row">
+                        
+                        <div class="col-md-7 col-sm-12">
+                          <div class="dataTables_paginate paging_simple_numbers" id="Quality_table1_paginate">
+                            <ul class="pagination">
+                              <li class="paginate_button previous disabled" aria-controls="Quality_table1" tabindex="0"
+                                id="Quality_table1_previous"><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                              <li class="paginate_button active" aria-controls="Quality_table1" tabindex="0"><a href="#">1</a></li>
+                              <li class="paginate_button next disabled" aria-controls="Quality_table1" tabindex="0" id="Quality_table1_next"><a
+                                  href="#"><i class="fa fa-angle-right"></i></a></li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="tab-pane" id="tab_Quality_inner_2">
-              <div class="col-sm-12 margintop20">
-                <div class="row">
-                  <div id="Quality_table2_wrapper" class="dataTables_wrapper no-footer">
-                    <div class="row">
-                      <div class="col-md-6 col-sm-12">
-                        <div class="dataTables_length" id="Quality_table2_length"><label> <select name="Quality_table2_length"
-                              aria-controls="Quality_table2" class="form-control input-xsmall input-inline">
-                              <option value="10">10</option>
-                              <option value="25">25</option>
-                              <option value="50">50</option>
-                              <option value="100">100</option>
-                            </select> records </label></div>
+              <div class="tab-pane" id="tab_Quality_inner_2">
+                <div class="col-sm-12 margintop20">
+                  <div class="row">
+                    <div id="Quality_table2_wrapper" class="dataTables_wrapper no-footer">
+                      <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                          <div class="dataTables_length" id="Quality_table2_length"><label> <select name="Quality_table2_length"
+                                aria-controls="Quality_table2" class="form-control input-xsmall input-inline">
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                              </select> records </label></div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                          <div id="Quality_table2_filter" class="dataTables_filter"><label>Search:<input type="search"
+                                class="form-control input-small input-inline" placeholder="" aria-controls="Quality_table2"></label></div>
+                        </div>
                       </div>
-                      <div class="col-md-6 col-sm-12">
-                        <div id="Quality_table2_filter" class="dataTables_filter"><label>Search:<input type="search"
-                              class="form-control input-small input-inline" placeholder="" aria-controls="Quality_table2"></label></div>
+                      <div class="table-scrollable">
+                        <table class="table table-responsive table-bordered dataTable no-footer" id="Quality_table2" role="grid"
+                          aria-describedby="Quality_table2_info">
+                          <thead>
+                            <tr class="text-center" role="row">
+                              <th class="sorting_asc" tabindex="0" aria-controls="Quality_table2" rowspan="1" colspan="1"
+                                aria-sort="ascending" aria-label="Date: activate to sort column ascending" style="width: 0px;">Date</th>
+                              <th class="sorting" tabindex="0" aria-controls="Quality_table2" rowspan="1" colspan="1"
+                                aria-label="Uploaded By: activate to sort column ascending" style="width: 0px;">Uploaded
+                                By</th>
+                              <th class="sorting" tabindex="0" aria-controls="Quality_table2" rowspan="1" colspan="1"
+                                aria-label="No.Of Records: activate to sort column ascending" style="width: 0px;">No.Of
+                                Records</th>
+                              <th class="text-center sorting" tabindex="0" aria-controls="Quality_table2" rowspan="1"
+                                colspan="1" aria-label="Excel: activate to sort column ascending" style="width: 0px;">Excel</th>
+                              <th class="text-center sorting" tabindex="0" aria-controls="Quality_table2" rowspan="1"
+                                colspan="1" aria-label="Download: activate to sort column ascending" style="width: 0px;">Download</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+  
+                            <tr role="row" class="odd">
+                              <td class="sorting_1">11/05/2018</td>
+                              <td>Admin</td>
+                              <td>10</td>
+                              <td class="text-center"><a><img class="icon_width" title="Click to download Excel file" src="/Content/Images/excel.png"></a></td>
+                              <td class="text-center"><a><i class="fa fa-download" title="Click to Download"></i></a></td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
-                    </div>
-                    <div class="table-scrollable">
-                      <table class="table table-responsive table-bordered dataTable no-footer" id="Quality_table2" role="grid"
-                        aria-describedby="Quality_table2_info">
-                        <thead>
-                          <tr class="text-center" role="row">
-                            <th class="sorting_asc" tabindex="0" aria-controls="Quality_table2" rowspan="1" colspan="1"
-                              aria-sort="ascending" aria-label="Date: activate to sort column ascending" style="width: 0px;">Date</th>
-                            <th class="sorting" tabindex="0" aria-controls="Quality_table2" rowspan="1" colspan="1"
-                              aria-label="Uploaded By: activate to sort column ascending" style="width: 0px;">Uploaded
-                              By</th>
-                            <th class="sorting" tabindex="0" aria-controls="Quality_table2" rowspan="1" colspan="1"
-                              aria-label="No.Of Records: activate to sort column ascending" style="width: 0px;">No.Of
-                              Records</th>
-                            <th class="text-center sorting" tabindex="0" aria-controls="Quality_table2" rowspan="1"
-                              colspan="1" aria-label="Excel: activate to sort column ascending" style="width: 0px;">Excel</th>
-                            <th class="text-center sorting" tabindex="0" aria-controls="Quality_table2" rowspan="1"
-                              colspan="1" aria-label="Download: activate to sort column ascending" style="width: 0px;">Download</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-
-                          <tr role="row" class="odd">
-                            <td class="sorting_1">11/05/2018</td>
-                            <td>Admin</td>
-                            <td>10</td>
-                            <td class="text-center"><a><img class="icon_width" title="Click to download Excel file" src="/Content/Images/excel.png"></a></td>
-                            <td class="text-center"><a><i class="fa fa-download" title="Click to Download"></i></a></td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-5 col-sm-12">
-                        <div class="dataTables_info" id="Quality_table2_info" role="status" aria-live="polite">Showing
-                          1 to 1 of 1 entries</div>
-                      </div>
-                      <div class="col-md-7 col-sm-12">
-                        <div class="dataTables_paginate paging_simple_numbers" id="Quality_table2_paginate">
-                          <ul class="pagination">
-                            <li class="paginate_button previous disabled" aria-controls="Quality_table2" tabindex="0"
-                              id="Quality_table2_previous"><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                            <li class="paginate_button active" aria-controls="Quality_table2" tabindex="0"><a href="#">1</a></li>
-                            <li class="paginate_button next disabled" aria-controls="Quality_table2" tabindex="0" id="Quality_table2_next"><a
-                                href="#"><i class="fa fa-angle-right"></i></a></li>
-                          </ul>
+                      <div class="row">
+                        <div class="col-md-5 col-sm-12">
+                          <div class="dataTables_info" id="Quality_table2_info" role="status" aria-live="polite">Showing
+                            1 to 1 of 1 entries</div>
+                        </div>
+                        <div class="col-md-7 col-sm-12">
+                          <div class="dataTables_paginate paging_simple_numbers" id="Quality_table2_paginate">
+                            <ul class="pagination">
+                              <li class="paginate_button previous disabled" aria-controls="Quality_table2" tabindex="0"
+                                id="Quality_table2_previous"><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                              <li class="paginate_button active" aria-controls="Quality_table2" tabindex="0"><a href="#">1</a></li>
+                              <li class="paginate_button next disabled" aria-controls="Quality_table2" tabindex="0" id="Quality_table2_next"><a
+                                  href="#"><i class="fa fa-angle-right"></i></a></li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -282,8 +286,7 @@
             </div>
           </div>
         </div>
+  
       </div>
-
     </div>
   </div>
-</div>
