@@ -1,0 +1,20 @@
+
+.node-menu .node-menu-content{
+    width: 170px! important;
+}
+
+.heading{
+    font-weight: bold;
+    text-align: right;
+    margin-left: 14px;
+    font-size: 14px;
+}
+
+.bottomgap{
+    margin-bottom: 8px !important;
+    margin-top: 8px !important;
+
+}
+.description{
+margin-left: -50px;
+}

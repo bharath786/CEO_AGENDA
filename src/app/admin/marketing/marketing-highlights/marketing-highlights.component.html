@@ -1,0 +1,243 @@
+<div class="col-xs-12">
+    <div class="container col-xs-12 filter">
+    
+      <div class="col-md-3 col-sm-5 col-sx-12 cust-padding">
+        <select class="form-control" name="Location">
+          <option value="">Location</option>
+          <option value="">Chennai</option>
+          <option value="">Delhi</option>
+          <option value="">Hyderabad</option>
+          <option value="">Kolkata</option>
+          <option value="">Mumbai</option>
+        </select>
+      </div>
+      <div class="col-md-3 col-sm-5 col-sx-12 cust-padding">
+        <select class="form-control" name="Division">
+          <option value="">Division</option>
+          <option value="">Division1</option>
+          <option value="">Division2</option>
+          <option value="">Division3</option>
+          <option value="">Division4</option>
+          <option value="">Division5</option>
+        </select>
+      </div>
+      <div class="col-md-2 col-sm-5 col-xs-12 cust-padding">
+        <select class="form-control" name="Business_Unit">
+          <option value="">Business Unit</option>
+          <option value="">Business Unit 1</option>
+          <option value="">Business Unit 2</option>
+          <option value="">Business Unit 3</option>
+          <option value="">Business Unit 4</option>
+          <option value="">Business Unit 5</option>
+        </select>
+      </div>
+    
+      <div class="col-md-3 col-sm-5 col-xs-12 cust-padding">
+
+        
+              
+          <a type="button" class="btn btn-default grey-dark daterange" ><i class="glyphicon glyphicon-calendar"></i> {{ start_date | date:'M/dd/y' }} - {{ end_date| date:'M/dd/y' }}</a>
+    
+      </div> 
+      
+      <div class="col-md-1 col-sm-3 col-xs-6 cust-padding">
+        <a class="btn btn-success" title="Click to Go">GO</a>
+      </div>  
+  </div>
+
+<div class="col-xs-12">
+ 
+
+ 
+      <div class="col-xs-12 col-md-4" style="background-color: white;  border: 1px solid  #1ab6a0; margin-right: 10px;">
+
+        <tree [tree]="tree" [settings]="{rootIsVisible: false}" (nodeSelected)="handleSelected1($event.node.node)"
+          #treeComponent></tree>
+      </div>
+    
+ 
+  <div *ngIf="mainvalue==='Summary'" class="col-xs-12 col-md-7 portlet solid grey-cararra table-responsive" style="border:1px solid  #1ab6a0;">
+    <table class="table table-bordered text-center margin-top-10" id="">
+      <thead>
+        <tr>
+          <th scope="col">KRA</th>
+          <th scope="col">KPI</th>
+          <th scope="col">MAX</th>
+          <th scope="col">MIN</th>
+          <th scope="col">Average</th>
+          <th scope="col">Target</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="7" scope="row">Business Development</td>
+          <td>Prospects</td>
+          <td>90</td>
+          <td>50</td>
+          <td>75</td>
+          <td>90</td>
+        </tr>
+        <tr>
+          <td>Active Leads</td>
+          <td>85</td>
+          <td>48</td>
+          <td>69</td>
+          <td>90</td>
+        </tr>
+        <tr>
+          <td>Future Leads</td>
+          <td>75</td>
+          <td>45</td>
+          <td>66</td>
+          <td>90</td>
+        </tr>
+        <tr>
+          <td>Parallel Projects</td>
+          <td>75</td>
+          <td>42</td>
+          <td>66</td>
+          <td>90</td>
+        </tr>
+        <tr>
+          <td>Conversion Ratio</td>
+          <td>75</td>
+          <td>42</td>
+          <td>66</td>
+          <td>90</td>
+        </tr>
+        <tr>
+          <td>Wins</td>
+          <td>75</td>
+          <td>42</td>
+          <td>66</td>
+          <td>90</td>
+        </tr>
+        <tr>
+          <td>Loses</td>
+          <td>75</td>
+          <td>42</td>
+          <td>66</td>
+          <td>90</td>
+        </tr>
+        <tr>
+          <td rowspan="2">Reputation</td>
+          <td>Glassdoor Reviews</td>
+          <td>4.8</td>
+          <td>2.2</td>
+          <td>3.9</td>
+          <td>4.9</td>
+        </tr>
+        <tr>
+          <td>Google Reviews</td>
+          <td>8.8</td>
+          <td>6.2</td>
+          <td>7.7</td>
+          <td>9.0</td>
+        </tr>
+        <tr>
+          <td rowspan="3" scope="row">Coverage</td>
+          <td>Mail</td>
+          <td>500</td>
+          <td>220</td>
+          <td>350</td>
+          <td>750</td>
+        </tr>
+        <tr>
+          <td>Social</td>
+          <td>5000</td>
+          <td>2200</td>
+          <td>3950</td>
+          <td>5900</td>
+        </tr>
+        <tr>
+          <td>Voice</td>
+          <td>1500</td>
+          <td>1220</td>
+          <td>1350</td>
+          <td>2000</td>
+        </tr>
+
+      </tbody>
+    </table>
+    <div [chart]="chart" class="col-xs-12"></div>
+
+  </div>
+  <div class="col-xs-12 col-md-7" *ngIf="mainvalue==='Prospects'">
+<div [chart]="prospects" style="border:1px solid #54f7e1"></div>
+</div>
+
+<div class="col-xs-12 col-md-7" *ngIf="mainvalue==='Active Leads'">
+    <div [chart]="activeleads" style="border:1px solid #54f7e1"></div>
+    </div>
+
+<div class="col-xs-12 col-md-8" *ngIf="mainvalue==='Exceptions'">
+    <div class="portlet solid grey-cararraz" style="border:1px solid  #1ab6a0">
+        <table class="table table-bordered text-center table-responsive col-sm-12 margin-top-10" id="">
+            <thead>
+                <tr>
+                    <th scope="col">KRA</th>
+                    <th scope="col">KPI</th>
+                    <th scope="col">Execptions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="7" scope="row">Business Development</td>
+                    <td>Prospects</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>Active Leads</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Future Leads</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Parallel Projects</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Conversion Ratio</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>Wins</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>Loses</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">Reputation</td>
+                    <td>Glassdoor Reviews</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Google Reviews</td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td rowspan="3" scope="row">Coverage</td>
+                    <td>Mail</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Social</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Voice</td>
+                    <td>0</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+
+
+</div>

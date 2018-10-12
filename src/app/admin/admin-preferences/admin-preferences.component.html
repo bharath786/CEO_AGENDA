@@ -1,0 +1,35 @@
+<div class="content-wrapper clearfix">
+  <div class="page-bar">
+      <ul class="page-breadcrumb">
+          <li>
+              <i class="fa fa-home"></i>
+              <a routerLink="/admin">Home</a>
+              <i class="fa fa-angle-right"></i>
+          </li>
+          <li>
+              <a routerLink="/admin/preferences">Preferences</a>
+          </li>
+      </ul>
+  </div>
+ 
+
+
+
+<ul class="nav nav-tabs">
+  <li>
+      <a routerLink="cms" class="active" data-toggle="tab"><i class="fa fa-cog"></i>&nbsp;CMS Settings</a>
+  </li>
+  <li>
+      <a routerLink="twilio" data-toggle="tab"><i class="fa fa-microphone"></i>&nbsp;Twilio Settings</a>
+  </li>
+  <li>
+      <a routerLink="sendgrid" data-toggle="tab"><i class="fa fa-envelope"></i>&nbsp;Send Grid Settings</a>
+  </li>
+  <li>
+      <a routerLink="preference" data-toggle="tab"><i class="fa fa-cogs"></i>&nbsp;Preferences</a>
+  </li>
+</ul> 
+
+<div><router-outlet></router-outlet></div>
+
+</div>

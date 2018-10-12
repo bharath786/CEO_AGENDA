@@ -1,0 +1,27 @@
+<div class="content-wrapper clearfix">
+  <div class="page-bar">
+    <ul class="page-breadcrumb">
+      <li>
+        <i class="fa fa-home"></i>
+        <a routerLink="/admin">Home</a>
+        <i class="fa fa-angle-right"></i>
+      </li>
+      <li>
+        <a routerLink="/admin/marketing">Marketing</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-sm-12">
+    <ul class="nav nav-pills" style="margin-left: 15px;">
+      <li class="pill_bg_color">
+        <a routerLink="highlights"><i class="fa fa-list-alt"></i>&nbsp;HighLights</a>
+      </li>
+      <li class="pill_bg_color">
+        <a routerLink="data"><i class="fa fa-folder"></i>&nbsp;Data</a>
+      </li>
+    </ul>
+    <router-outlet></router-outlet>
+
+  </div>
+
+</div>

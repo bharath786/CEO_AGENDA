@@ -1,0 +1,22 @@
+input[type=text],input[type=password]{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #5da6dc;
+    color: #fff;
+}
+
+.login {
+    background-color: #003084!important;
+    color: #fff;
+}
+
+form.login-form{
+    padding: 10% 10% 0 10%;
+}
+
+button.btn-primary{
+    background: #5da6dc;
+    color: #fff;
+    border: none;
+    border-radius:10px!important;
+}

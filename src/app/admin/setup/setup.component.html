@@ -1,0 +1,305 @@
+<div class="content-wrapper bg-white" style="min-height: 560px;">
+    <section class="content-header border-btm-blue">
+        <div class="pull-right ">
+            <i class="color-orange fa fa-info-circle"></i>This Page is used to setup Dimensions, KRA's with related to KPI's
+        </div>
+    </section>
+    <div class="page-bar innerscreen-page-bar">
+        <div class="col-md-12 no-padding">
+            <ul class="page-breadcrumb">
+                <li>
+                    <i class="color-voilet fa fa-home"></i>
+                    <a class="color-voilet" routerLink="/admin">Home</a>
+                    <i class="color-voilet fa fa-angle-right"></i>
+                </li>
+                <li>
+                    <a class="color-orange" routerLink="/admin/setup">Setup</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class=" border-blue">
+        <div class="pd-top-10">
+            <tree [tree]="tree" (menuItemSelected)="handleSelected($event)"></tree>
+        </div>
+    </div>
+
+    <div class="modal fade" bsModal #updategroupmodal="bs-modal" [config]="{backdrop: 'static'}" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        <b>Update Group</b>
+                    </h4>
+                </div>
+                <div class="modal-body col-md-12">
+    
+                    <form (ngSubmit)="onSubmitEntity()" #heroForm="ngForm" class="form-horizontal">
+
+                                    <div class="form-group bottomgap col-md-12">
+                                        <label class="col-md-3 control-label">Group Name&nbsp;:</label>
+                                        <div class="col-md-8">
+                                         <input type="text" class="form-control" placeholder="Enter Group Name">
+                                        </div>
+                                        </div>
+  
+                    </form>
+    
+    
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Save</button>
+                    <button type="button" class="btn btn-default" (click)="closeToggle(2)">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" bsModal #addgroupmodal="bs-modal" [config]="{backdrop: 'static'}" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        <b>Add Group</b>
+                    </h4>
+                </div>
+                <div class="modal-body col-md-12">
+    
+                    <form (ngSubmit)="onSubmitEntity()" #heroForm="ngForm" class="form-horizontal">
+
+                                    <div class="form-group bottomgap col-md-12">
+                                        <label class="col-md-3 control-label">Group Name&nbsp;:</label>
+                                        <div class="col-md-8">
+                                         <input type="text" class="form-control" placeholder="Enter Group Name">
+                                        </div>
+                                        </div>
+  
+                    </form>
+    
+    
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+                    <button type="button" class="btn btn-default" (click)="closeToggle(2)">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" bsModal #adddimensionmodal="bs-modal" [config]="{backdrop: 'static'}" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        <b>Add Dimension</b>
+                    </h4>
+                </div>
+                <div class="modal-body col-md-12">
+    
+                    <form (ngSubmit)="onSubmitEntity()" #heroForm="ngForm" class="form-horizontal">
+
+                                    <div class="form-group bottomgap col-md-12">
+                                        <label class="col-md-4 control-label">Dimension Name&nbsp;:</label>
+                                        <div class="col-md-8">
+                                         <input type="text" class="form-control" placeholder="Enter Dimension Name">
+                                        </div>
+                                        </div>
+  
+                    </form>
+    
+    
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+                    <button type="button" class="btn btn-default" (click)="closeToggle(2)">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="modal fade" bsModal #updatedimensionmodal="bs-modal" [config]="{backdrop: 'static'}" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        <b>Update Dimension</b>
+                    </h4>
+                </div>
+                <div class="modal-body col-md-12">
+    
+                    <form (ngSubmit)="onSubmitEntity()" #heroForm="ngForm" class="form-horizontal">
+
+                                    <div class="form-group bottomgap col-md-12">
+                                        <label class="col-md-4 control-label">Dimension Name&nbsp;:</label>
+                                        <div class="col-md-8">
+                                         <input type="text" class="form-control" placeholder="Enter Dimension Name">
+                                        </div>
+                                        </div>
+  
+                    </form>
+    
+    
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Save</button>
+                    <button type="button" class="btn btn-default" (click)="closeToggle(2)">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <div class="modal fade" bsModal #addkramodal="bs-modal" [config]="{backdrop: 'static'}" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        <b>Add KRA</b>
+                    </h4>
+                </div>
+                <div class="modal-body col-md-12">
+    
+                    <form (ngSubmit)="onSubmitEntity()" #heroForm="ngForm" class="form-horizontal">
+
+                                    <div class="form-group bottomgap col-md-12">
+                                        <label class="col-md-4 control-label">KRA Name&nbsp;:</label>
+                                        <div class="col-md-8">
+                                         <input type="text" class="form-control" placeholder="Enter KRA Name">
+                                        </div>
+                                        </div>
+  
+                    </form>
+    
+    
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+                    <button type="button" class="btn btn-default" (click)="closeToggle(2)">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+       
+    <div class="modal fade" bsModal #updatekramodal="bs-modal" [config]="{backdrop: 'static'}" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        <b>Update KRA</b>
+                    </h4>
+                </div>
+                <div class="modal-body col-md-12">
+    
+                    <form (ngSubmit)="onSubmitEntity()" #heroForm="ngForm" class="form-horizontal">
+
+                                    <div class="form-group bottomgap col-md-12">
+                                        <label class="col-md-4 control-label">KRA Name&nbsp;:</label>
+                                        <div class="col-md-8">
+                                         <input type="text" class="form-control" placeholder="Enter KRA Name">
+                                        </div>
+                                        </div>
+  
+                    </form>
+    
+    
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Save</button>
+                    <button type="button" class="btn btn-default" (click)="closeToggle(2)">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="modal fade" bsModal #addkpimodal="bs-modal" [config]="{backdrop: 'static'}" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        <b>Add KPI</b>
+                    </h4>
+                </div>
+                <div class="modal-body col-md-12">
+    
+                    <form (ngSubmit)="onSubmitEntity()" #heroForm="ngForm" class="form-horizontal">
+
+                                    <div class="form-group bottomgap col-md-12">
+                                        <label class="col-md-4 control-label">KPI Name&nbsp;:</label>
+                                        <div class="col-md-8">
+                                         <input type="text" class="form-control" placeholder="Enter KPI Name">
+                                        </div>
+                                        </div>
+  
+                    </form>
+    
+    
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+                    <button type="button" class="btn btn-default" (click)="closeToggle(2)">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" bsModal #updatekpimodal="bs-modal" [config]="{backdrop: 'static'}" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        <b>Update KPI</b>
+                    </h4>
+                </div>
+                <div class="modal-body col-md-12">
+    
+                    <form (ngSubmit)="onSubmitEntity()" #heroForm="ngForm" class="form-horizontal">
+
+                                    <div class="form-group bottomgap col-md-12">
+                                        <label class="col-md-4 control-label">KPI Name&nbsp;:</label>
+                                        <div class="col-md-8">
+                                         <input type="text" class="form-control" placeholder="Enter KPI Name">
+                                        </div>
+                                        </div>
+  
+                    </form>
+    
+    
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Save</button>
+                    <button type="button" class="btn btn-default" (click)="closeToggle(2)">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" bsModal #deletedmodal="bs-modal" [config]="{backdrop: 'static'}" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        <b>Delete Record</b>
+                    </h4>
+                </div>
+                <div class="modal-body col-md-12">
+    
+                        <div class="col-sm-12">
+                                <label>Are You Sure ? You want to delete record, this action can't be undone.</label>
+                            </div>
+    
+    
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success"><i class="fa fa-check"></i>&nbsp;Delete</button>
+                    <button type="button" class="btn btn-default" (click)="closeToggle(2)"><i class="fa fa-times"></i>&nbsp;Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
